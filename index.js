@@ -6,7 +6,7 @@
     - Write a Person Constructor that initializes `name` and `age` from arguments.
     - All instances of Person should initialize with an empty `stomach` array.
     - Give instances of Person the ability to `.eat("someFood")`:
-        + .eat() should recieve a string as a parameter and take some type of edible as an argument
+        + .eat() should receive a string as a parameter and take some type of edible as an argument
         + When eating an edible, it should be pushed into the `stomach` array.
         + The `eat` method should have no effect if there are 10 items in the `stomach` array.
     - Give instances of Person the ability to `.poop()`:
@@ -15,11 +15,52 @@
         + It should return a string with `name` and `age`. Example: "Mary, 50"
 */
 
-function Person() {
-
+function Person(name, age, pronoun, possessivePronoun) {
+this.name = name,
+this.age = age;
+this.pronoun = pronoun;
+this.possessive = possessivePronoun; 
+this.stomach = [];
+}
+Person.prototype.eat = function(someFood){
+  console.log(`${this.name} ate ${someFood}. mmm.`);
+  if(this.stomach.length>=10){
+    if(this.pronoun == 'he' || this.pronoun == 'she'){
+      console.log(`${this.pronoun} wasn't very hungry. ${this.possessive} stomach is really full...`)
+      } else {
+        console.log(`${this.pronoun} aren't very hungry. ${this.possessive} stomach is really full...`)
+      }
+  } else {this.stomach.push(someFood);}
+}
+Person.prototype.poop = function(){
+  this.stomach = [];
+  console.log(`${this.name} spent some time on the toilet and feels much better.`)
+}
+Person.prototype.toString=function(){
+  if(this.pronoun == 'he' || this.pronoun == 'she'){
+    let string = `${this.name} is ${this.age} years old. ${this.pronoun} likes ${this.possessive} life.` 
+    console.log(string);
+    return string;
+    } else if (this.pronoun == 'they'){
+      let string = `${this.name} is ${this.age} years old. ${this.pronoun} like ${this.possessive} life.`
+      console.log(string);
+      return string;}
 }
 
-
+const arbor = new Person(`arbor`, 23, `they`, `their`)
+arbor.toString();
+arbor.eat('carrots');
+arbor.eat('an apple')
+arbor.eat('jellybeans')
+arbor.eat('a bagel')
+arbor.eat('a clif bar (with espresso!)')
+arbor.eat('their vitamins')
+arbor.eat('their own words..')
+arbor.eat('a whole bag of grapes')
+arbor.eat('some more candy')
+arbor.eat('a cookie')
+arbor.eat('one (1) single crouton.')
+arbor.poop();
 /*
   TASK 2
     - Write a Car constructor that initializes `model` and `milesPerGallon` from arguments.
