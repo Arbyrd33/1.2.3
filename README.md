@@ -9,7 +9,7 @@
 
 ## Introduction
 
-In order to complete these tasks you will need your newly aquired knowledge of constructor functions, prototypes, and the `this` keyword.
+In order to complete these tasks you will need your newly acquired knowledge of constructor functions, prototypes, and the `this` keyword.
 
 ## Instructions
 
@@ -18,13 +18,13 @@ In order to complete these tasks you will need your newly aquired knowledge of c
 Using VSCode and Command Line:
 
 
-1. Fork the repo
-2. Go into canvas and connect your reop to codegrade
-3. Clone your forked version of the repo
-4. DO NOT CREATE A BRANCH. You will be pushing your changes to the main/master today
-5. cd into your repo
-6. open the terminal in your vs code and type `npm install`
-7. next type `npm run test` in your terminal
+x1. Fork the repo
+x2. Go into canvas and connect your reop to codegrade
+x3. Clone your forked version of the repo
+x4. DO NOT CREATE A BRANCH. You will be pushing your changes to the main/master today
+x5. cd into your repo
+x6. open the terminal in your vs code and type `npm install`
+x7. next type `npm run test` in your terminal
 8. Complete your work making regular commits to main/ master your codegrade score will update each time you make a push.
 
 
