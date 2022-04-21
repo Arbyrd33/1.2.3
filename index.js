@@ -107,7 +107,7 @@ florence.drive(184);
         + Should return a string "Playing with x", x being the favorite toy.
 */
 Baby.prototype = Object.create(Person.prototype);
-function Baby(name, age, favoriteToy, pronoun, possessive, ) {
+function Baby(name, age, favoriteToy, pronoun, possessive) {
 Person.call(this, name, age, pronoun, possessive);
 this.favoriteToy = favoriteToy;
 }
@@ -118,14 +118,33 @@ Baby.prototype.play = function(){
 
 const bea = new Baby('Beatrice', 2, `a feather wand`, `she`, `her`);
 bea.play();
-/* 
-  TASK 4
-  In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
-  3. 
-  4. 
-*/
+// TASK 4
+//   In your own words explain the four principles for the "this" keyword below:
+
+//   1. 'this' references the entire window in a global scope
+//   2. 'this' is always before a dot when being implicitly called.
+  // this.thing
+//   3. 'this' refers to a specific instance of an object when created by a constructor function. 
+const dana = new Person(`Dana`, 48);
+dana.toString();
+//^ this is dana
+//   4. 'this' can be explicitly defined using the .call() method. You use this with inheritance mostly, when creating a new object.
+
+
+
+Elder.prototype = Object.create(Person.prototype);
+function Elder(name, age, hobby, pronoun, possessive){
+  Person.call(this, name, age, pronoun, possessive); //it's used in this line.
+  this.hobby = hobby;
+}
+Elder.prototype.pastTime = function(){
+  console.log(`${this.name} passes the time by ${this.hobby}.`);
+  return(`This whole constructor thing kind of reminds me of a giant game of mad libs.`);
+};
+
+const cain = new Elder(`Cain`, 185, `feebly yelling at kids on the lawn`);
+
+cain.pastTime();
 
 ///////// END OF CHALLENGE /////////
 
