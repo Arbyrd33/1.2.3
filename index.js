@@ -61,6 +61,7 @@ arbor.eat('some more candy')
 arbor.eat('a cookie')
 arbor.eat('one (1) single crouton.')
 arbor.poop();
+arbor.eat(`a bag of nacho cheese-its`)
 /*
   TASK 2
     - Write a Car constructor that initializes `model` and `milesPerGallon` from arguments.
@@ -77,10 +78,22 @@ arbor.poop();
         + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
 */
 
-function Car() {
-
+function Car(model, milesPerGallon) {
+this.model = model;
+this.milesPerGallon = milesPerGallon;
+this.tank = 0;
+this.odometer = 0;
 }
 
+Car.prototype.fill = function(gallons){
+  this.tank += gallons;
+  console.log(`Topped up! The tank now has ${this.tank} gallons.`)
+}
+Car.prototype.drive = function(distance){
+  this.odometer += distance;
+  this.tank -= distance / this.milesPerGallon;
+  console.log(`The car drove ${this.distance} miles, and with a mileage of ${this.milesPerGallon} miles to the gallon, there are now ${this.tank} miles left in the tank.`)
+}
 
 /*
   TASK 3
