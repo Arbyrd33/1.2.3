@@ -93,6 +93,7 @@ Car.prototype.drive = function(distance){
   this.odometer += distance;
   this.tank -= distance / this.milesPerGallon;
   console.log(`The car drove ${this.distance} miles, and with a mileage of ${this.milesPerGallon} miles to the gallon, there are now ${this.tank} miles left in the tank.`)
+  
 }
 
 /*
