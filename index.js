@@ -112,9 +112,12 @@ Person.call(this, name, age, pronoun, possessive);
 this.favoriteToy = favoriteToy;
 }
 Baby.prototype.play = function(){
+  console.log(`${this.name} is playing with ${this.possessive} favorite toy, ${this.favoriteToy}.`)
   return `Playing with ${this.favoriteToy}`
 }
 
+const bea = new Baby('Beatrice', 2, `a feather wand`, `she`, `her`);
+bea.play();
 /* 
   TASK 4
   In your own words explain the four principles for the "this" keyword below:
