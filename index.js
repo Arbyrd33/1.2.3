@@ -106,11 +106,14 @@ florence.drive(184);
     - Besides the methods on Person.prototype, babies also have the ability to `.play()`:
         + Should return a string "Playing with x", x being the favorite toy.
 */
-
-function Baby() {
-
+Baby.prototype = Object.create(Person.prototype);
+function Baby(name, age, favoriteToy, pronoun, possessive, ) {
+Person.call(this, name, age, pronoun, possessive);
+this.favoriteToy = favoriteToy;
 }
-
+Baby.prototype.play = function(){
+  return `Playing with ${this.favoriteToy}`
+}
 
 /* 
   TASK 4
