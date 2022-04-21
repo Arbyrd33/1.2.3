@@ -44,7 +44,8 @@ Person.prototype.toString=function(){
     } else if (this.pronoun == 'they'){
       let string = `${this.name} is ${this.age} years old. ${this.pronoun} like ${this.possessive} life.`
       console.log(string);
-      return string;}
+      return string;
+    } else return `${this.name} is ${this.age}`;
 }
 
 const arbor = new Person(`arbor`, 23, `they`, `their`)
@@ -92,10 +93,12 @@ Car.prototype.fill = function(gallons){
 Car.prototype.drive = function(distance){
   this.odometer += distance;
   this.tank -= distance / this.milesPerGallon;
-  console.log(`The car drove ${this.distance} miles, and with a mileage of ${this.milesPerGallon} miles to the gallon, there are now ${this.tank} miles left in the tank.`)
-  
+  console.log(`${this} drove ${this.distance} miles, and with a mileage of ${this.milesPerGallon} miles to the gallon, there are now ${this.tank.toFixed(2)} gallons left in the tank.`)
 }
 
+const florence = new Car(`smartCar`, 24);
+florence.fill(25);
+florence.drive(184);
 /*
   TASK 3
     - Write a Baby constructor subclassing Person.
